@@ -1,0 +1,37 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Implementacion bootstrap css-->
+     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+     <!-- Implementacion css-->
+     <link rel="stylesheet" href="{% static 'core/CSS/estilo5.css' %}">
+    <title>Chuky</title>
+</head>
+<body>
+    <div id=t>
+        <h1>
+            La sinopsis
+        </h1>
+
+    </div>
+    <div class="rescate">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/8kmLHwKH31M" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+    <div id="t2">
+        <h1>
+            Pelicula completa
+        </h1>
+        </div>
+    <div class="rescate">
+               <a href="https://pelisplushd.net/pelicula/annabelle">Link para ir a la pelicula</a>
+            </div>
+    <div id="fin">
+        <a href="{% url 'index' %}">Volver a la pagina principal</a>
+
+    </div>
+</body>
+</html>

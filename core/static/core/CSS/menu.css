@@ -1,0 +1,32 @@
+body {
+    background-image: url(https://i.pinimg.com/originals/cc/38/aa/cc38aaa04fd8e086d6811d3ed73f51ce.jpg);
+    background-size: 100%;
+}
+
+h1,
+#preferida {
+    text-align: center;
+}
+
+button {
+    text-decoration: none;
+    padding: 0.5em 1em;
+    border: none;
+    background: black;
+    cursor: pointer;
+    color: rgb(255, 255, 255);
+}
+
+a {
+    color: rgb(104, 1, 1);
+}
+
+body iframe {
+    padding-top: 30px;
+}
+.container h1{
+    color: antiquewhite;
+}
+#animacion{
+    text-align: center;
+}

@@ -1,0 +1,77 @@
+body {
+    background-image: url(https://fondosmil.com/fondo/7563.jpg);
+    background-size: 150%;
+}
+
+#formulario1 input {
+    width: 50%;
+    height: 30px;
+    margin: 0.5rem;
+}
+
+#formulario1 button {
+    padding: 0.5em 1em;
+    border: none;
+    background: rgb(255, 255, 255);
+    cursor: pointer;
+}
+
+#iniciar {
+    color: aliceblue;
+    text-align: center;
+}
+
+#color {
+    color: aliceblue;
+}
+
+#formulario1 button {
+    padding: 0.5em 1em;
+    border: none;
+    background: black;
+    cursor: pointer;
+    color: rgb(255, 255, 255);
+}
+
+footer a {
+    color: rgb(104, 1, 1);
+    text-align: right;
+    background-color: rgb(0, 0, 0);
+}
+
+footer {
+    text-align: center;
+    float: right;
+    padding: 100px;
+}
+
+footer a {
+    width: 100px;
+    padding: 20px;
+}
+
+footer a:hover {
+    color: rgb(252, 0, 0);
+    text-decoration: none;
+}
+
+.form-check a {
+    display: inline-block;
+    text-align: center;
+    color: rgb(104, 1, 1);
+    text-decoration: none;
+}
+
+.form-check a a:hover {
+    color: rgb(252, 0, 0);
+    text-decoration: none
+}
+p{
+    padding: 20px;
+    font: 20px sans-serif;
+    background: rgb(0, 0, 0);
+    
+    width: 70%;
+    border: 2px solid rgb(105, 0, 0);
+    color: aliceblue;
+}

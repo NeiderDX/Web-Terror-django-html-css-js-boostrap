@@ -1,0 +1,57 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Implementacion bootstrap css -->
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <!-- Implementacion bootstrap js -->
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <!-- Implementacion jQuery js -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <!-- Implementacion jQuery validate plugin -->
+    <script language="javascript" type="text/javascript"
+        src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.17.0/jquery.validate.js"></script>
+    <!-- Implementacion css -->
+    <link rel="stylesheet" href="{% static 'core/CSS/login.css' %}">
+    <title>Document</title>
+</head>
+
+<body>
+
+            <div class=container>
+                <img src="{% static 'core/logos_deco/logo_fredy_cruger.png' %}" alt="terror">
+            <div id="slideUp">
+                <p>
+                    Inicie sesion, recuerde que debe estar registrado antes.
+                </p>
+
+            </div>
+            <div class="container">
+                <form id="formulario1" action="" method="post">
+                    <h1 id="iniciar">Iniciar Sesion</h1>
+                    {% csrf_token %}
+                    {{form.as_p}}
+                    <button type="submit">Iniciar Sesion</button>
+                    </br></br>
+                    <a href="{% url 'signin' %}">Aun no te registras?, haz click aqui</a>
+
+                </form>
+            <footer>
+
+                <a href="{% url 'index' %}">Volver</a>
+
+            </footer>
+            <div>
+                </br>
+                <img src="{% static 'core/logos_deco/imagenes de terror con movimiento real - Buscar con Google.gif' %}" alt="animacion">
+
+            </div>
+    </div>
+    <script src="{% static 'core/js/funcion_animacion.js' %}"></script>
+</body>
+
+</html>

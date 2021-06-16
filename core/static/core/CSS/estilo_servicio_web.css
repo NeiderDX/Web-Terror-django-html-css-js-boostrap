@@ -1,0 +1,36 @@
+body{
+    background-image: url(https://fondosmil.com/fondo/8416.jpg);
+    background-size: 100%
+}
+footer a{
+    color: rgb(104, 1, 1);
+    text-align: right;
+    background-color: rgb(0, 0, 0);
+    text-decoration: none;
+}
+footer{
+    text-align: center;
+    
+}
+footer a {
+    width: 100px;
+     padding: 20px;
+}
+footer a:hover{
+    color: rgb(252, 0, 0);
+    
+}
+footer{
+    float: right;
+    padding: 100px;
+    
+}
+#tabla-categorias{
+    color: aliceblue;
+}
+h1{
+    color: aliceblue;
+    text-align: center;
+}
+/* #img_tablas{
+} */

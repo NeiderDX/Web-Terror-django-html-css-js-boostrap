@@ -1,0 +1,125 @@
+{% load static %}
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Implementacion bootstrap css -->
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <!-- Implementacion bootstrap js -->
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <!-- Implementacion jQuery js -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <!-- Implementacion jQuery validate plugin -->
+    <script language="javascript" type="text/javascript"
+        src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.17.0/jquery.validate.js"></script>
+    <!-- Implementacion css -->
+    <link href="{% static 'core/CSS/estilo_formulario.css' %}" rel="stylesheet" type="text/css" />
+  
+
+</head>
+
+<body>
+    <div class="container">
+        <div class="container-sm">
+            <h1>Registrate con nosotros</h1>
+
+        </div>
+       
+        <div class="row">
+
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+    
+              <div id="slideUp">
+                <p>
+                    Registrate para poder recibin noticias de peliculas de terror, poder solictar peliculas, has click aqui para que el mensaje desapresca
+                </p>
+
+            </div>
+                <form method="post" id="formulario1">
+                    {% csrf_token %}
+                     <div class="form-group">
+                        <label for="id_run">RUN</label>
+                       {{form.run}}
+                    </div>
+
+                    <div class="form-group">
+                        <label for="id_first_name">Nombres</label>
+                        {{form.first_name}}
+                    </div>
+                    <div class="form-group">
+                        <label for="id_txtApellido">Apellidos</label>
+                        {{form.last_name}}
+                    </div>
+                    <div class="form-group">
+                        <label for="id_txtEmail">Email</label>
+                        {{form.email}}
+                    </div>
+                   
+                     <div class="form-group">
+                        <label for="id_txtDireccion">Direccion</label>
+                        {{form.address}}
+                    </div>
+                    <div class="form-group">
+                        <label for="id_txtTelefono">Telefono</label>
+                        {{form.phone1}}
+                    </div>
+                    <div class="form-group">
+                        <label for="id_txtRepetirTelefono">Repetir telefono</label>
+                        {{form.phone2}}
+                    </div>
+
+                    <div class="form-group">
+                        <label for="id_txtFechaNacimiento">Fecha de nacimiento</label>
+                        {{form.birth_day}}
+                    </div>
+                    <div class="form-group">
+                        <label for="id_txtContrasena">Contraseña</label>
+                        {{form.password1}}
+                    </div>
+                    <div class="form-group">
+                        <label for="id_txtRepetirContrasena">Repetir Contraseña</label>
+                        {{form.password2}}
+                    </div>
+                    
+                    <div class="form-group">
+                        <h3>
+                            Tipos de peliculas
+                        </h3>
+                        {{form.movie_preference}}
+                    </div>
+                    <div class="form-group">
+                        <h3>
+                            Sexo
+                        </h3>
+                        {{form.sex}}
+                    </div>
+
+                    <div class="form-check">
+                        <button type="submit" id="form-check" class="btn btn-outline-primary">Enviar</button>
+                    </div>
+                    <div class="form-check">
+                        <button type="reset" class="btn btn-primarybtn btn-outline-primary">Limpiar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+   
+    <footer>
+       
+                   <a href="{% url 'index' %}">Volver</a>
+
+    </footer>
+
+    <!-- Implementacion bootstrap + popper js -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js" integrity="sha384-SR1sx49pcuLnqZUnnPwx6FCym0wLsk5JZuNx2bPPENzswTNFaQU1RDvt3wT4gWFG" crossorigin="anonymous"></script>
+    <!-- Implementacion js -->
+    <script src="{% static 'core/js/funcion_animacion.js' %}"></script>
+    <script src="{% static 'core/js/validacion.js' %}"></script>
+    <script src="{% static 'core/js/validacion_run.js' %}"></script>
+    <script src="{% static 'core/js/mensajes_es.js' %}"></script>
+    <!-- <script src="{% static 'core/js/agregar_formulario.js' %}"></script> -->
+
+</body>
+</html>

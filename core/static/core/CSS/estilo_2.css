@@ -1,0 +1,25 @@
+body{
+    background-image: url(https://deepsanddeeps.com/blog/wp-content/uploads/2017/02/deeps-and-deeps-blog-viernes-13-foto-jason-voorhes-en-el-bosque-1024x576.jpg);
+    background-size: 100%;
+
+}
+#t{
+    text-align: left;
+    color: aliceblue;
+    height: 40px;
+
+}
+#t2{
+    text-align: left;
+    color: aliceblue;
+}
+.rescate a{
+    color: aliceblue;
+}
+#fin a{
+    color: aliceblue;
+}
+.titulo{
+    height: 40px;
+
+}

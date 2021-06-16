@@ -1,0 +1,44 @@
+body{
+    background-image: url(https://occidente.co/wp-content/uploads/2019/10/peliculas-halloween.jpg);
+    background-size: 100%;
+}
+
+#formulario1 button {
+
+    padding: 0.5em 1em;
+    border: none;
+    background: rgb(71, 1, 1);
+    cursor: pointer;
+    color: rgb(255, 255, 255);
+}
+footer a{
+    color: rgb(104, 1, 1);
+    text-align: right;
+    background-color: rgb(0, 0, 0);
+}
+footer{
+    text-align: center;
+}
+footer a {
+    width: 100px;
+     padding: 20px;
+}
+footer a:hover{
+    color: rgb(252, 0, 0);
+    text-decoration: none;
+}
+footer{
+    float: right;
+    padding: 100px;
+    
+}
+.form-check a{
+    display: inline-block;
+    text-align: center;
+    color: rgb(252, 0, 0);
+    text-decoration: none;
+}
+.form-check a a:hover{
+    color: rgb(252, 0, 0);
+    text-decoration: none;
+}

@@ -1,0 +1,210 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Implementacion css -->
+    <link rel="stylesheet" href="{% static 'core/CSS/estilo.css' %}">
+    <!-- Implementacion bootstrap css -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <!-- Implementacion jQuery js -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <title>Pagina principal</title>
+</head>
+
+<body>
+    <div class="container-fluid">
+        <header>
+            <h1>
+                Bienvenido a la plataforma web del terror
+            </h1>
+        </header>
+
+
+        <section>
+            <div class="principal">
+                <div id="contenedorTERROR">
+                    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+                        <ol class="carousel-indicators">
+                            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                            <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                            <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
+
+                        </ol>
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <a href="{% url 'p1' %}">
+                                    <img class="d-block" src="{% static 'core/TerrorFIlms/viernes13.jpg' %}" alt="pelicula_1">
+                                </a>
+                                <div class="carousel-caption d-none d-md-block" id="viernes_13">
+                                    <h5>Viernes 13</h5>
+                                    <p>El campamento de verano del lago Cristal reabre sus puertas tras permanecer
+                                        varios años cerrado a raíz de un accidente. A partir de ese momento, comienza a
+                                        aparecer gente muerta en extrañas circunstancias.
+
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <a href="{% url 'p2' %}">
+                                    <img class="d-block" src="{% static 'core/TerrorFIlms/chukkyyy.jpg' %}" alt="pelicula_2">
+                                </a>
+                                <div class="carousel-caption d-none d-md-block" id="chuky">
+                                    <h5>Chuky</h5>
+                                    <p>Mediante un ritual de vudú, el alma de un asesino moribundo trasmigra a un
+                                        muñeco. Una madre compra el muñeco para su hijo, sin saber que está arrojando a
+                                        sus hijos a los brazos de un ser infernal.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <a href="{% url 'p3' %}">
+                                    <img class="d-block" src="{% static 'core/TerrorFIlms/CALLE_ELM.jpg' %}" alt="pelicula_3">
+                                </a>
+                                <div class="carousel-caption d-none d-md-block" id="fredy">
+                                    <h5>Pesadilla en la calle ELM</h5>
+                                    <p>Un grupo de adolescentes sufre unas pesadillas horrendas en las que un ser
+                                        deforme que porta garras de acero los persigue. Lo más inquietante es que los
+                                        hechos empiezan a sugerir que lo que ocurre mientras sueñan repercute en la vida
+                                        real.</p>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <a href="{% url 'p4' %}">
+                                    <img class="d-block" src="{% static 'core/TerrorFIlms/ana_en_oscuridad.jpeg' %}" alt="pelicula_4">
+                                </a>
+                                <div class="carousel-caption d-none d-md-block" id="anabelle">
+                                    <h5> Annabelle</h5>
+                                    <p>John Form encuentra el regalo perfecto para Mia, su esposa embarazada: una
+                                        preciosa muñeca antigua llamada Annabelle.
+                                        Una noche, una secta satánica les ataca brutalmente y provocan que un ente
+                                        maligno se apodere de Annabelle
+                                    </p>
+                                </div>
+                            </div>
+
+                        </div>
+                        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button"
+                            data-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Previous</span>
+                        </a>
+                        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button"
+                            data-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Next</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+
+        </section>
+        <div class="contenedor-inferior">
+
+
+            <aside class="lateral_1">
+                <h1>Bienvenido</h1>
+                <h5>Advertencia </h5>
+                <p>Aqui encontraras trailers y peliculas de terror de seleccion, esta pagina NO es apta para menores,
+                    selecciona la imagen de la pelicula a ver y disfruta</p>
+                <img src="{% static 'core/TerrorFIlms/pngwing.com.png' %}" alt="logo" />
+            </aside>
+            
+             <div class="navegacion">
+                <ul>
+                    
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'signin' %}">Registrate!!!</a>
+                    </li>
+                    <li>
+                        <a class="nav-link" href="{% url 'service' %}">Informacion de peliculas</a>
+                    </li>
+                    <li>
+                        <a class="nav-link" href="{% url 'login' %}">Iniciar sesion</a>
+                    </li>
+                    
+                 
+              
+                </ul>
+            </div>
+
+            <div class="fono">
+                <h1>
+                    Mira un trailer, te encantara
+                </h1>
+            </div>
+
+            <div class="rescate">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/vS7sGlrWwxY"
+                    title="YouTube video player" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen></iframe>
+            </div>
+        </div>
+
+        <div class="fono">
+            <h1>
+                Hechale un vistazo a las peliculas antiguas de terror
+            </h1>
+        </div>
+
+        <div class="rescate">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/hqevv4ZwSWA"
+                title="YouTube video player" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen></iframe>
+        </div>
+    </div>
+
+
+
+    <aside class="da">
+        <p>
+            Para mas peliculas puedes enviar un mail solictandola a TERROR_PELI@GMAIL.COM o llamar 944934637. Direccion:
+            Rodrigo de Trianna 4236 Las Condes
+        </p>
+        <ul>
+            <li>
+                <img src="{% static 'core/icon/facebook-f-brands.svg' %}" alt="facebook">
+            </li>
+            <li>
+                <img src="{% static 'core/icon/google-plus-g-brands.svg' %}" alt="goggle">
+
+            </li>
+
+            <li>
+                <img src="{% static 'core/icon/instagram-brands.svg' %}" alt="istagram">
+            </li>
+        </ul>
+
+
+
+    </aside>
+    <aside class="du">
+        <img src="{% static 'core/logos_deco/logo_anime.png' %}" alt="anime">
+
+    </aside>
+
+    <!-- Implementacion jQuery js -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <!-- Implementacion popper js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <!-- Implementacion bootstrap js -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+    <!-- Implementacion js-->
+        <script src="{% static 'core/js/animacion_inicio.js' %}"></script>
+</body>
+
+</html>

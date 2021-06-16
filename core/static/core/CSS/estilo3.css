@@ -1,0 +1,21 @@
+body{
+    background-image: url(https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/chucky-serie-syfy-mancini-nick-antosca-1578905731.jpeg);
+    background-size: 100%;
+
+}
+#t{
+    text-align: left;
+    color: aliceblue;
+}
+#t2{
+    text-align: left;
+    color: aliceblue;
+}
+.rescate a{
+    color: rgb(241, 255, 41);
+    text-align: center;
+}
+#fin a{
+    color: aliceblue;
+
+}

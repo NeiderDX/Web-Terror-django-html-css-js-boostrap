@@ -1,0 +1,92 @@
+body{
+
+    background-image: url(https://www.wallpapertip.com/wmimgs/67-676061_48-horror-wallpaper-and-photo-in-hd-for.jpg);
+     background-size: 200%;
+}
+.form-group{
+    color: aliceblue;
+}
+footer a{
+    color: rgb(104, 1, 1);
+    text-align: right;
+    background-color: rgb(0, 0, 0);
+}
+footer{
+    text-align: center;
+}
+.logo{
+    text-align: center;
+}
+.container{
+    background-size: 150%
+
+}
+.form-check{
+    display: inline-block;
+    text-align: center;
+}
+footer a {
+    width: 100px;
+     padding: 20px;
+}
+footer a:hover{
+    color: rgb(252, 0, 0);
+    text-decoration: none;
+}
+footer{
+    float: right;
+    padding: 100px;
+    
+}
+.container-sm{
+    color: aliceblue;
+    text-align: center;
+    
+}
+p{
+    padding: 20px;
+    font: 20px sans-serif;
+    background: rgb(0, 0, 0);
+    
+    width: 50%;
+    border: 2px solid rgb(105, 0, 0);
+    color: aliceblue;
+}
+ #id_txtNombre{
+    width: 500px;
+ }
+  #id_txtApellido{
+    width: 500px;
+  }
+
+  #id_txtEmail{
+      width: 800px;
+  }
+  #id_txtDireccion{
+      width: 500px;
+  }
+  #id_txtTelefono{
+       width: 350px;
+  }
+  #id_txtRepetirTelefono{
+       width: 350px;
+  }
+#id_txtFechaNacimiento{
+    width: auto;
+
+}
+#contenedor_registros{
+    
+    
+    text-align: center;
+    
+}
+#tablaprueba{
+    text-align: center;
+    color: aliceblue;
+    
+}
+#id_sex{
+    list-style: none;
+    margin-left: -35px;
+}
