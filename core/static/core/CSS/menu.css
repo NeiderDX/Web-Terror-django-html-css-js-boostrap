@@ -1,5 +1,5 @@
 body {
-    background-image: url(https://i.pinimg.com/originals/cc/38/aa/cc38aaa04fd8e086d6811d3ed73f51ce.jpg);
+    background-image: url(https://occidente.co/wp-content/uploads/2019/10/peliculas-halloween.jpg);
     background-size: 100%;
 }
 
@@ -29,4 +29,8 @@ body iframe {
 }
 #animacion{
     text-align: center;
+}
+#table_head,
+#table_body{
+    color: aliceblue;
 }

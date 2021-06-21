@@ -1,13 +1,14 @@
 {% load static %}
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Implementacion bootstrap css -->
-    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+        integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
     <link rel="stylesheet" href="{% static 'core/CSS/menu.css' %}">
     <title>Document</title>
 </head>
@@ -17,7 +18,7 @@
         <h1>Bienvenido al servicio personalizado</h1>
 
         <img src="{% static 'core/logos_deco/LOGO_CHIC_LOCA.png' %}" alt="loca">
-        
+
         <div id="preferida">
             <iframe width="560" height="315" src="https://www.youtube.com/embed/WmH-ro84JaU"
                 title="YouTube video player" frameborder="0"
@@ -28,20 +29,53 @@
                 title="YouTube video player" frameborder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowfullscreen></iframe>
-
-
         </div>
         <div id="animacion">
             <img src="{% static 'core/logos_deco/AKI GIFS.gif' %}" alt="">
 
         </div>
-        
 
+        <div class="container">
+            <div class="row">
+                <h1>Datos de peliculas interesantes</h1>
+    
+            </div>
+            <div class="row">
+                <input type="text" id="id_search">
+                <button type="button" class="btn btn-danger" id="btn-obtener">Obtener Datos</button>
+            </div>
+    
+            <div class="row">
+                <table id="tabla-categorias" class="table table-hover"  >
+                    <thead id="table_head">
+                      <tr>
+                        <th scope="col">#</th>
+                        <th scope="col"> Nombre pelicula </th>
+                        <th scope="col"> Imagen pelicula</th>
+                        <th scope="col" id="img_tablas"> Descripcion</th>
+                        <th scope="col"></th>
+                      </tr>
+                    </thead>
+                    <tbody id="table_body">
+                     
+                      
+                    </tbody>
+                </table>
+    
+            </div>
     </div>
     <footer>
-        <button> <a href="{% url 'index' %}">Cerrar Sesion</a></button>
+        <button> <a href="{% url 'logout' %}">Cerrar Sesion</a></button>
 
     </footer>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns"
+        crossorigin="anonymous"></script>
+    <script src="{% static 'core/js/search_movie.js' %}"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 </body>
 
 </html>
