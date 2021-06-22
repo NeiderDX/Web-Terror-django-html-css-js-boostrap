@@ -1,3 +1,4 @@
+import requests
 from core.models import User
 from core.forms import UsersCreationForm
 from django.shortcuts import redirect, render
@@ -45,3 +46,6 @@ def annabelle(request):
 
 def redirect_login(request):
     return redirect('login')
+
+def show_details(request,pk):
+    return render(request, 'core/mostrar_pelicula.html')

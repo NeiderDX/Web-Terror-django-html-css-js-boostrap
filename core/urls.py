@@ -13,4 +13,5 @@ urlpatterns = [
     path('freddy/', views.freddy, name='p3'),
     path('annabelle/', views.annabelle, name='p4'),
     path('menu/', views.menu, name='menu'),
+    path('menu/view/<str:pk>', views.show_details, name='show_movie')
 ]
