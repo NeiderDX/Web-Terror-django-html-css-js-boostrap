@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import AbstractUser
+from django.db.models.fields import FloatField
 # Create your models here.
 
 class User(AbstractUser):
@@ -20,3 +21,19 @@ class User(AbstractUser):
     
     def set_phone(self, raw_phone):
         self.phone= raw_phone
+
+class Movie(models.Model):
+    user=models.ForeignKey('core.User', on_delete=models.CASCADE)
+    id=models.CharField(max_length=10, primary_key=True)
+    title=models.CharField(max_length=30)
+    release_date=models.DateField()
+    runtime=models.CharField(max_length=20)
+    imdb_rating=FloatField()
+    
+    def set_fields(self,user,id,title,release_date,runtime,imdb_rating):
+        self.user=user
+        self.id=id
+        self.title=title
+        self.release_date=release_date
+        self.runtime=runtime
+        self.imdb_rating=imdb_rating

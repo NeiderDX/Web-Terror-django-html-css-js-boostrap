@@ -1,4 +1,4 @@
-from core.models import User
+from core.models import Movie, User
 from django import forms
 
 class UsersCreationForm(forms.ModelForm):
@@ -26,5 +26,37 @@ class UsersCreationForm(forms.ModelForm):
         if commit:
             user.set_password(password)
             user.set_phone(phone)
+            user.save()
+        return user
+
+class MovieAddForm(forms.ModelForm):
+    
+    class Meta:
+        model = Movie
+        fields=()
+        
+    def save(self,user,id,title,release_date,runtime,imdb_rating,commit=True):
+        form=super(MovieAddForm,self).save(commit=False)
+        if commit:
+            form.set_fields(user,id,title,release_date,runtime,imdb_rating)
+            form.save()
+        return form
+
+class ProfileEditForm(forms.ModelForm):
+
+    email=forms.EmailField(widget=forms.EmailInput(attrs={'class':'form-control'}),label_suffix="Ingrese su nuevo email aqui")
+    address=forms.CharField(widget=forms.TextInput(attrs={'class':'form-control'}),label_suffix="Ingrese su direccion aqui")
+    phone=forms.CharField(widget=forms.NumberInput(attrs={'class':'form-control','type':'tel'}), max_length=9,label_suffix="Ingrese su nuevo telefono aqui, maximo 9 digitos")
+    birth_day=forms.DateField(widget=forms.DateInput(attrs={'class':'form-control','type':'date','max':'2010-12-31'}))
+    
+    class Meta:
+        model = User
+        fields = ("email","address","phone","birth_day",)
+    
+    def save(self, commit=True):
+        user=super(ProfileEditForm,self).save(commit=False)
+        password=self.cleaned_data.get('password1')
+        if commit:
+            user.set_password(password)
             user.save()
         return user

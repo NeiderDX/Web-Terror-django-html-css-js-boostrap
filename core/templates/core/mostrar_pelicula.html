@@ -1,0 +1,8 @@
+<form method="post">
+{% csrf_token %}
+{{movie.id}}
+{{movie.title}}
+{{movie.plot}}
+{{movie.genres}}
+<button class="btn btn-primary">Agregar a favoritos</button>
+</form>

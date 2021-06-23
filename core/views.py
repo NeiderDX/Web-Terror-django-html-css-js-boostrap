@@ -1,7 +1,8 @@
+import json
 import requests
-from core.models import User
-from core.forms import UsersCreationForm
-from django.shortcuts import redirect, render
+from core.models import Movie, User
+from core.forms import MovieAddForm, ProfileEditForm, UsersCreationForm
+from django.shortcuts import redirect, render, get_object_or_404
 
 # Create your views here.
 
@@ -48,4 +49,34 @@ def redirect_login(request):
     return redirect('login')
 
 def show_details(request,pk):
-    return render(request, 'core/mostrar_pelicula.html')
+    respone=requests.get('https://imdb-api.com/en/API/Title/k_29bfmsvl/'+pk,params={})
+    result=json.loads(respone.text)
+    user=User.objects.get(email=request.user.email)
+    if request.method=="POST":
+        form=MovieAddForm(request.POST)
+        form.save(user,result['id'],result['title'],result['releaseDate'],result['runtimeStr'],result['imDbRating'])
+        return redirect('menu')
+    return render(request, 'core/mostrar_pelicula.html',{'movie':result})
+
+def profile_edit(request):
+    usuario=get_object_or_404(User, email=request.user.email)
+    if request.method=='POST':
+       form=ProfileEditForm(request.POST, instance=usuario)
+       if form.is_valid():
+           form.save()
+           return redirect('index')
+    else:
+        datos={
+        'form':ProfileEditForm(instance=usuario),
+      
+    }
+    if request.user.is_authenticated==True:
+        return render(request, 'core/modificar.html',datos)
+    else:
+        return redirect('login')
+
+def movie_delete(request,pk):
+    user=User.objects.get(email=request.user.email)
+    movie=get_object_or_404(Movie,user_id=user.id, id=pk)
+    movie.delete()
+    return redirect('')
