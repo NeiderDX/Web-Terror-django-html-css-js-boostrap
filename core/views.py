@@ -46,6 +46,7 @@ def annabelle(request):
     return render(request, 'core/p_4.html')
 
 def redirect_login(request):
+    
     return redirect('login')
 
 def show_details(request,pk):
@@ -64,7 +65,7 @@ def profile_edit(request):
        form=ProfileEditForm(request.POST, instance=usuario)
        if form.is_valid():
            form.save()
-           return redirect('index')
+           return redirect('menu')
     else:
         datos={
         'form':ProfileEditForm(instance=usuario),

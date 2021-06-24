@@ -1,0 +1,13 @@
+.container{
+    text-align: center;
+    margin: 0 auto;
+    margin-top: 25%;
+    background-color: darkslategray;
+}
+.container p{
+    color: aliceblue;
+}
+body{
+    background: url(https://fondosmil.com/fondo/7612.jpg) no-repeat fixed center;
+    background-size: cover;
+}

@@ -55,8 +55,6 @@ class ProfileEditForm(forms.ModelForm):
     
     def save(self, commit=True):
         user=super(ProfileEditForm,self).save(commit=False)
-        password=self.cleaned_data.get('password1')
         if commit:
-            user.set_password(password)
             user.save()
         return user
