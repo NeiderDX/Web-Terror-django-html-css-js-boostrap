@@ -16,9 +16,9 @@
 <body>
     <div class="container">
         <h1>Bienvenido al servicio personalizado</h1>
-
+    <div id="loca">
         <img src="{% static 'core/logos_deco/LOGO_CHIC_LOCA.png' %}" alt="loca">
-
+    </div>
         <div id="preferida">
             <iframe width="560" height="315" src="https://www.youtube.com/embed/WmH-ro84JaU"
                 title="YouTube video player" frameborder="0"
@@ -34,7 +34,10 @@
             <img src="{% static 'core/logos_deco/AKI GIFS.gif' %}" alt="">
 
         </div>
-        <a href="{% url 'profile_edit'  %}">Modificar Perfil</a>
+        
+        <button> <a href="{% url 'profile_edit'  %}">Modificar Perfil</a> </button>
+        <button> <a href="{% url 'favorites'  %}">Listar Peliculas</a> </button>
+        
         <div class="container">
             <div class="row">
                 <h1>Datos de peliculas interesantes</h1>

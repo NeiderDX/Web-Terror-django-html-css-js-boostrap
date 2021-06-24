@@ -30,7 +30,15 @@ body iframe {
 #animacion{
     text-align: center;
 }
+
+#loca img{
+    text-align: center;
+}
 #table_head,
 #table_body{
     color: aliceblue;
+}
+
+#botones a{
+    color:white;
 }

@@ -1,8 +1,36 @@
-<form method="post">
-{% csrf_token %}
-{{movie.id}}
-{{movie.title}}
-{{movie.plot}}
-{{movie.genres}}
-<button class="btn btn-primary">Agregar a favoritos</button>
-</form>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+      <!-- Implementacion bootstrap css -->
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+      integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <title>Mostrar Pelicula</title>
+</head>
+<body>
+   <div class="container">
+    <h1>Detalles de tu pelicula favorita<h1>    
+        <form method="post">
+            {% csrf_token %}
+    <div id="id">        
+        {{movie.id}}
+    </div>
+    <div id="titulo">
+        {{movie.title}}
+    </div>
+    <div id="Descripción">
+        {{movie.plot}}
+    </div>
+    <div id="Genero">
+        {{movie.genres}}
+    </div>
+        
+        
+        <button class="btn btn-primary">Agregar a favoritos</button>
+        </form>
+    </div>     
+</body>
+</html>

@@ -79,4 +79,13 @@ def movie_delete(request,pk):
     user=User.objects.get(email=request.user.email)
     movie=get_object_or_404(Movie,user_id=user.id, id=pk)
     movie.delete()
-    return redirect('')
+    return redirect('favorites')
+
+def listar_peliculas(request):
+    # queryset   ..... SELECT * FROM CARRERA
+    user=User.objects.get(email=request.user.email)
+    movies = Movie.objects.filter(user_id=user.id).all()
+    return render(request, "core/listar_peliculas.html", {'movies': movies})
+
+
+

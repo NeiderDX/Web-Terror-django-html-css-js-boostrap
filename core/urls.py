@@ -14,5 +14,10 @@ urlpatterns = [
     path('annabelle/', views.annabelle, name='p4'),
     path('menu/', views.menu, name='menu'),
     path('menu/view/<str:pk>', views.show_details, name='show_movie'),
-    path('profile/edit/', views.profile_edit,name='profile_edit')
+    path('profile/edit/', views.profile_edit,name='profile_edit'),
+    path('menu/favorites/', views.listar_peliculas,name='favorites'),
+    path('menu/favorites/del/<str:pk>', views.movie_delete,name='delete'),
+   
+
+     
 ]
