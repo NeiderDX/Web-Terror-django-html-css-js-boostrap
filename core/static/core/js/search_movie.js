@@ -16,4 +16,4 @@ $("#btn-obtener").click(function () {
     });
 
 });
-//   cierre del click 
+//   cierre del click
