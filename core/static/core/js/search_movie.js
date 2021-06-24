@@ -1,6 +1,6 @@
 $("#btn-obtener").click(function () {
     var searched=$("#id_search").val();
-    $.get("https://imdb-api.com/en/API/SearchMovie/k_fdn8m1c9/"+searched,
+    $.get("https://imdb-api.com/es/API/SearchMovie/k_fdn8m1c9/"+searched,
     function(data){
         console.log(data);
         $("#table_body").empty();

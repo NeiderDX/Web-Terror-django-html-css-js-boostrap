@@ -17,27 +17,34 @@
 <body>
     <div class="container">
         <div id="h1">
-        <h1>Detalles de tu pelicula favorita<h1>
+            <h1>Detalles de tu pelicula favorita<h1>
         </div>
-                <form method="post">
-                    {% csrf_token %}
-                    <div id="id">
-                        {{movie.id}}
-                    </div>
-                    <div id="titulo">
-                        {{movie.title}}
-                    </div>
-                    <div id="Descripción">
-                        {{movie.plot}}
-                    </div>
-                    <div id="Genero">
-                        {{movie.genres}}
-                    </div>
+        <form method="post">
+            {% csrf_token %}
+            <div id="id">
+                <h3>ID pelicula</h3>
+                {{movie.id}}
+            </div>
+            <div id="titulo">
+                <h3>Titulo pelicula</h3>
+                {{movie.title}}
+            </div>
+            <div id="Descripción">
+                <h3>Descripcion pelicula</h3>
+                {{movie.plotLocal}}
+            </div>
+            <div id="Genero">
+                <h3>Genero pelicula</h3>
+                {{movie.genres}}
+            </div>
 
 
-                    <button class="btn btn-primary">Agregar a favoritos</button>
-                </form>
+            <button class="btn btn-primary" onclick="location=`{%  url 'favorites' %} `">Volver a la lista</button>
+        </form>
     </div>
+
+
+
 </body>
 
 </html>

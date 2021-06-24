@@ -50,7 +50,7 @@ def redirect_login(request):
     return redirect('login')
 
 def show_details(request,pk):
-    respone=requests.get('https://imdb-api.com/en/API/Title/k_fdn8m1c9/'+pk,params={})
+    respone=requests.get('https://imdb-api.com/es/API/Title/k_fdn8m1c9/'+pk,params={})
     result=json.loads(respone.text)
     user=User.objects.get(email=request.user.email)
     if request.method=="POST":
