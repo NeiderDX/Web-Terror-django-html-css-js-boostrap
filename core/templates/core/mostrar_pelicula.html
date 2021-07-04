@@ -32,15 +32,19 @@
             </div>
             <div id="Descripción">
                 <h3>Descripcion pelicula</h3>
-                {{movie.plotLocal}}
+                {{movie.release_date}}
             </div>
             <div id="Genero">
                 <h3>Genero pelicula</h3>
-                {{movie.genres}}
+                {{movie.runtime}}
+            </div>
+            <div id="Genero">
+                <h3>Sinopsis</h3>
+                {{movie.plot}}
             </div>
 
 
-            <button class="btn btn-primary" onclick="location=`{%  url 'favorites' %} `">Volver a la lista</button>
+            <input class="btn btn-primary" value="Volver a la lista" onclick="history.back()">
         </form>
     </div>
 

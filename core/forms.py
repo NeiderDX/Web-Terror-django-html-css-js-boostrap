@@ -1,3 +1,4 @@
+from django.forms import models, widgets
 from core.models import Movie, User
 from django import forms
 
@@ -29,18 +30,32 @@ class UsersCreationForm(forms.ModelForm):
             user.save()
         return user
 
-class MovieAddForm(forms.ModelForm):
-    
+class MovieForm(forms.ModelForm):
     class Meta:
         model = Movie
-        fields=()
-        
-    def save(self,user,id,title,release_date,runtime,imdb_rating,commit=True):
-        form=super(MovieAddForm,self).save(commit=False)
-        if commit:
-            form.set_fields(user,id,title,release_date,runtime,imdb_rating)
-            form.save()
-        return form
+        fields=(
+            "title",
+            "release_date",
+            "runtime",
+            "plot",
+            "imdb_rating",
+            "user"
+            )
+        labels={
+            'title':'Titulo',
+            'release_date':'Fecha de estreno',
+            'runtime':'Duracion',
+            'plot':'Sinopsis',
+            'imdb_rating':'Rating de imdb'
+        }
+        widgets={
+            'title':forms.TextInput(attrs={'class':'form-control'}),
+            'release_date':forms.DateInput(attrs={'class':'form-control','type':'date'}),
+            'runtime':forms.TimeInput(attrs={'class':'form-control','type':'time'}),
+            'plot':forms.Textarea(attrs={'class':'form-control','style':'height:80px'}),
+            'imdb_rating':forms.NumberInput(attrs={'class':'form-control'}),
+            'user':forms.HiddenInput
+        }
 
 class ProfileEditForm(forms.ModelForm):
 

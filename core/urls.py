@@ -13,11 +13,13 @@ urlpatterns = [
     path('freddy/', views.freddy, name='p3'),
     path('annabelle/', views.annabelle, name='p4'),
     path('menu/', views.menu, name='menu'),
-    path('menu/view/<str:pk>', views.show_details, name='show_movie'),
     path('profile/edit/', views.profile_edit,name='profile_edit'),
-    path('menu/favorites/', views.listar_peliculas,name='favorites'),
-    path('menu/favorites/del/<str:pk>', views.movie_delete,name='delete'),
-   
+    
+    path('menu/movie/add', views.MovieCreateView.as_view(), name='add_movie'),
+    path('menu/movie/', views.MovieListView.as_view(), name='list_movie'),
+    path('menu/movie/<int:pk>/detail', views.MovieDetailView.as_view(), name='detail_movie'),
+    path('menu/movie/<int:pk>/edit/', views.MovieUpdateView.as_view(), name='edit_movie'),
+    path('menu/movie/<int:pk>/del/', views.MovieDeleteView.as_view() ,name='delete_movie'),
 
      
 ]

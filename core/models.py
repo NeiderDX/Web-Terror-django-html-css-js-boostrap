@@ -24,16 +24,8 @@ class User(AbstractUser):
 
 class Movie(models.Model):
     user=models.ForeignKey('core.User', on_delete=models.CASCADE)
-    id=models.CharField(max_length=10, primary_key=True)
     title=models.CharField(max_length=30)
     release_date=models.DateField()
     runtime=models.CharField(max_length=20)
-    imdb_rating=FloatField()
-    
-    def set_fields(self,user,id,title,release_date,runtime,imdb_rating):
-        self.user=user
-        self.id=id
-        self.title=title
-        self.release_date=release_date
-        self.runtime=runtime
-        self.imdb_rating=imdb_rating
+    plot=models.TextField(max_length=256, blank=True)
+    imdb_rating=models.FloatField()

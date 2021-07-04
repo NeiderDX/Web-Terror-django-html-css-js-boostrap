@@ -29,15 +29,16 @@
         </tr>
       </thead>
       <tbody>
-        {% for m in movies %}
+        {% for movie in object_list %}
         <tr>
-          <th scope="row">{{ m.title}} </th>
-          <td>{{ m.release_date }}</td>
-          <td>{{ m.runtime }}</td>
-          <td>{{ m.imdb_rating}}</td>
+          <th scope="row">{{ movie.title}} </th>
+          <td>{{ movie.release_date }}</td>
+          <td>{{ movie.runtime }}</td>
+          <td>{{ movie.imdb_rating}}</td>
 
-          <td><a class="btn btn-primary" href="{% url 'show_movie' m.id %}">Ver Detalles</a></td>
-          <td><a class="btn btn-danger" href="{% url 'delete' m.id %}">Eliminar</a></td>
+          <td><a class="btn btn-primary" href="{% url 'detail_movie' movie.id %}">Ver Detalles</a></td>
+          <td><a class="btn btn-primary" href="{% url 'edit_movie' movie.id %}">Editar</a></td>
+          <td><a class="btn btn-danger" href="{% url 'delete_movie' movie.id %}">Eliminar</a></td>
         </tr>
         {% endfor %}
       </tbody>

@@ -1,0 +1,30 @@
+{% extends 'core/menu.html' %}
+{% load static %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'core/CSS/estilo_confirmacion_eliminacion.css' %}">
+{% endblock css %}
+
+{% block content %}
+        <h1>Confirmacion de eliminacion</h1>
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+    
+            <div id="slideUp">
+              <p>
+                Aqui veras la confirmacion de la pelicula que anteriormente elimiste
+              </p>
+
+          </div>
+          <div class="container">
+              <form method="post" id="fromulario_eliminacion">
+                {% csrf_token %}
+                 <p>
+                     Esta seguro que desea eliminar la pelicula, esta accion no podra revertirse
+                 </p>
+                <button type="submit" id="confirm_button" class="btn btn-outline-primary">Si</button>
+                <button id="confirm_button" class="btn btn-outline-primary">No</button>
+                </form>
+        
+
+          </div>
+{% endblock content %}

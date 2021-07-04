@@ -1,0 +1,92 @@
+body {
+    background-image: url(https://sm.ign.com/ign_es/screenshot/default/alfabetajuega-silent-hill-11122018-770x433_3bt4.jpg);
+    background-size: 100%;
+}
+
+h1{
+    color: aliceblue;
+}
+
+p{
+    padding: 30px;
+    font: 20px sans-serif;
+    background: rgb(0, 0, 0);
+    
+    width: 150px;
+    border: 2px solid rgb(105, 0, 0);
+    color: aliceblue;
+}
+
+
+.container{
+    background-size: 150%;
+    text-align: center;
+}
+
+p{
+    float: none;
+    text-align: center;
+
+    padding: 20px;
+    font: 20px sans-serif;
+    background: rgb(0, 0, 0);
+    
+    width: 100%;
+    border: 2px solid rgb(105, 0, 0);
+    color: aliceblue;
+}
+ #id_txtNombre{
+    width: 500px;
+ }
+#id_txtApellido{
+    width: 500px;
+  }
+
+#id_txtEmail{
+      width: 800px;
+  }
+#id_txtDireccion{
+      width: 500px;
+  }
+#id_txtTelefono{
+       width: 350px;
+}
+#id_txtRepetirTelefono{
+       width: 350px;
+  }
+#id_txtFechaNacimiento{
+    width: auto;
+}
+#contenedor_registros{
+    text-align: center;
+    
+}
+#tablaprueba{
+    text-align: center;
+    color: aliceblue;
+    
+}
+#id_sex{
+    list-style: none;
+    margin-left: -35px;
+}
+#nav{
+    background-color: blue;
+}
+
+
+
+#slideUp{
+    
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+#animacion img{
+    border: 10px solid rgb(0, 0, 0);
+}
+
+
+.container h1{
+    color: black;
+}
