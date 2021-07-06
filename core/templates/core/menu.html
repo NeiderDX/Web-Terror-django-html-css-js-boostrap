@@ -36,45 +36,16 @@
           </div>
         </li>
       </ul>
-
-      <form class="form-inline my-2 my-lg-0">
-        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" name="search">
-        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-      </form>
+      <ul class="navbar-nav mr-3">  
+        <li class="nav-item">
+          <div class="navbar-text">Bienvenido {{user.first_name}}</div>
+        </li>
+      </ul>
     </div>
   </nav>
 
   {% block content %}{% endblock content %}
-
-  {% if search_list %}
-  <div class="container">
-    <div class="row">
-      <h1>Datos de peliculas interesantes</h1>
-    </div>
-    <div class="row">
-      <input type="text" id="id_search">
-      <button type="button" class="btn btn-danger" id="btn-obtener">Obtener Datos</button>
-    </div>
-    <div class="row">
-      <table id="tabla-categorias" class="table table-hover"  >
-        <thead id="table_head">
-          <tr>
-            <th scope="col">#</th>
-            <th scope="col"> Nombre pelicula </th>
-            <th scope="col"> Imagen pelicula</th>
-            <th scope="col" id="img_tablas"> Descripcion</th>
-            <th scope="col"></th>
-          </tr>
-        </thead>
-        <tbody id="table_body">
-                     
-        </tbody>
-      </table>
-    </div>   
-  </div>
-  {% endif %}
-
-
+  
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
     integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
     crossorigin="anonymous"></script>

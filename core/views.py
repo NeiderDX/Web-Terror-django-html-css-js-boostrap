@@ -33,9 +33,6 @@ def signin(request):
     return render(request,'core/formulario.html',datos)
 
 def menu(request):
-    if request.method=="GET":
-        movie=Movie.objects.filter(user=request.user).all()
-        return render(request, 'core/menu.html',{'search_list':movie})
     return render(request,'core/menu.html')
 
 def service(request):
