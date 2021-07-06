@@ -1,5 +1,9 @@
-from django.http import request
-from django.urls.base import reverse
+from django.db.models.signals import post_save
+from django.dispatch import receiver
+from rest_framework.authtoken.models import Token
+from django.conf import settings
+from rest_framework import generics
+from .serializers import MovieSerializer
 from core.models import Movie, User
 from core.forms import MovieForm, ProfileEditForm, UsersCreationForm
 from django.shortcuts import redirect, render, get_object_or_404
@@ -53,15 +57,15 @@ def redirect_login(request):
     return redirect('login')
 
 # details
-# def show_details(request,pk):
-    respone=requests.get('https://imdb-api.com/es/API/Title/k_fdn8m1c9/'+pk,params={})
-    result=json.loads(respone.text)
-    user=User.objects.get(email=request.user.email)
-    if request.method=="POST":
-        form=MovieAddForm(request.POST)
-        form.save(user,result['id'],result['title'],result['releaseDate'],result['runtimeStr'],result['imDbRating'])
-        return redirect('menu')
-    return render(request, 'core/mostrar_pelicula.html',{'movie':result})
+# # def show_details(request,pk):
+#     respone=requests.get('https://imdb-api.com/es/API/Title/k_fdn8m1c9/'+pk,params={})
+#     result=json.loads(respone.text)
+#     user=User.objects.get(email=request.user.email)
+#     if request.method=="POST":
+#         form=MovieAddForm(request.POST)
+#         form.save(user,result['id'],result['title'],result['releaseDate'],result['runtimeStr'],result['imDbRating'])
+#         return redirect('menu')
+#     return render(request, 'core/mostrar_pelicula.html',{'movie':result})
 
 # update
 def profile_edit(request):
@@ -134,3 +138,19 @@ class MovieDetailView(DetailView):
     
     def get_queryset(self):
         return self.model.objects.filter(user_id=self.request.user)
+
+# API objects
+class API_objects(generics.ListCreateAPIView):
+    queryset = Movie.objects.all()
+    serializer_class= MovieSerializer
+
+class API_objects_detail(generics.RetrieveUpdateDestroyAPIView):
+    queryset = Movie.objects.all()
+    serializer_class= MovieSerializer
+    
+# auth_token for user
+
+@receiver(post_save, sender=settings.AUTH_USER_MODEL)
+def create_auth_token(sender, instance=None, created=False, **kwargs):
+    if created:
+        Token.objects.create(user=instance)
