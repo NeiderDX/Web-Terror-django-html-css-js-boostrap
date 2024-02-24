@@ -5,6 +5,6 @@ Jorge Alfaro
 Luis Garcia de la Huerta
 Lukas Meza
 
-Link repositorio GIT:
-
-https://github.com/Astralroth/TERROR_WEB_DJANGO.git
+Como iniciar:
+1.-Instalar Django (pip install django).
+2.-Instalar Archivo Requeriments.txt (pip install -r requirements.txt).
